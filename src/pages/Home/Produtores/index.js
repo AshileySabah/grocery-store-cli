@@ -34,6 +34,19 @@ const Produtores = () => {
     }
   };
 
+  const ordenarEstrelas = () => {
+    const copyLista = lista.slice(0, lista.length);
+    const newLista = copyLista.sort((a, b) => {
+      return a.estrelas < b.estrelas ? -1 : 1;
+    });
+
+    if (JSON.stringify(lista) === JSON.stringify(newLista)) {
+      setLista(newLista.reverse());
+    } else {
+      setLista(newLista);
+    }
+  };
+
   const TopoLista = () => (
     <>
       <Topo />
@@ -43,6 +56,9 @@ const Produtores = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={ordenarDistancia}>
         <Text>Ordenar por distância</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={ordenarEstrelas}>
+        <Text>Ordenar por estrelas</Text>
       </TouchableOpacity>
     </>
   );
