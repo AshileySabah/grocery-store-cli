@@ -21,12 +21,28 @@ const Produtores = () => {
     }
   };
 
+  const ordenarDistancia = () => {
+    const copyLista = lista.slice(0, lista.length);
+    const newLista = copyLista.sort((a, b) => {
+      return a.distancia < b.distancia ? -1 : 1;
+    });
+
+    if (JSON.stringify(lista) === JSON.stringify(newLista)) {
+      setLista(newLista.reverse());
+    } else {
+      setLista(newLista);
+    }
+  };
+
   const TopoLista = () => (
     <>
       <Topo />
       <Text style={styles.titulo}>Produtores</Text>
       <TouchableOpacity onPress={ordenarNome}>
         <Text>Ordenar por nome</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={ordenarDistancia}>
+        <Text>Ordenar por distância</Text>
       </TouchableOpacity>
     </>
   );
