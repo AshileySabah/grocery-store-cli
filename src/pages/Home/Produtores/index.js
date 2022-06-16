@@ -8,36 +8,10 @@ import styles from './styles';
 const Produtores = () => {
   const [lista, setLista] = useState(produtores.lista);
 
-  const ordenarNome = () => {
+  const ordenar = propriedade => {
     const copyLista = lista.slice(0, lista.length);
     const newLista = copyLista.sort((a, b) => {
-      return a.nome < b.nome ? -1 : 1;
-    });
-
-    if (JSON.stringify(lista) === JSON.stringify(newLista)) {
-      setLista(newLista.reverse());
-    } else {
-      setLista(newLista);
-    }
-  };
-
-  const ordenarDistancia = () => {
-    const copyLista = lista.slice(0, lista.length);
-    const newLista = copyLista.sort((a, b) => {
-      return a.distancia < b.distancia ? -1 : 1;
-    });
-
-    if (JSON.stringify(lista) === JSON.stringify(newLista)) {
-      setLista(newLista.reverse());
-    } else {
-      setLista(newLista);
-    }
-  };
-
-  const ordenarEstrelas = () => {
-    const copyLista = lista.slice(0, lista.length);
-    const newLista = copyLista.sort((a, b) => {
-      return a.estrelas < b.estrelas ? -1 : 1;
+      return a[propriedade] < b[propriedade] ? -1 : 1;
     });
 
     if (JSON.stringify(lista) === JSON.stringify(newLista)) {
@@ -51,13 +25,13 @@ const Produtores = () => {
     <>
       <Topo />
       <Text style={styles.titulo}>Produtores</Text>
-      <TouchableOpacity onPress={ordenarNome}>
+      <TouchableOpacity onPress={() => ordenar('nome')}>
         <Text>Ordenar por nome</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={ordenarDistancia}>
+      <TouchableOpacity onPress={() => ordenar('distancia')}>
         <Text>Ordenar por distância</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={ordenarEstrelas}>
+      <TouchableOpacity onPress={() => ordenar('estrelas')}>
         <Text>Ordenar por estrelas</Text>
       </TouchableOpacity>
     </>
