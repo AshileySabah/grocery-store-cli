@@ -1,8 +1,8 @@
 import React from 'react';
-import Produtores from './Produtores';
+import ListaProdutores from './ListaProdutores';
 
 const Home = () => {
-  return <Produtores />;
+  return <ListaProdutores />;
 };
 
 export default Home;
