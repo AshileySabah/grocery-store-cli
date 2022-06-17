@@ -1,13 +1,23 @@
 import React, {useState} from 'react';
 import {FlatList, Text} from 'react-native';
-import produtores from '../../../mocks/produtores';
-import Produtor from '../Produtor';
-import Filtro from '../Filtro';
-import Topo from '../Topo';
+import produtores from '../../mocks/produtores';
+import Produtor from './Produtor';
+import Filtro from './Filtro';
+import Topo from './Topo';
 import styles from './styles';
 
-const ListaProdutores = () => {
-  const [lista, setLista] = useState(produtores.lista);
+const ListaProdutores = ({melhoresProdutores = false}) => {
+  const [lista, setLista] = useState(() => {
+    const initialList = produtores.lista;
+
+    if (melhoresProdutores) {
+      return initialList.filter(item => {
+        return item.estrelas >= 4;
+      });
+    } else {
+      return initialList;
+    }
+  });
 
   const TopoLista = () => (
     <>

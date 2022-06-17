@@ -1,5 +1,5 @@
 import React from 'react';
-import ListaProdutores from './ListaProdutores';
+import ListaProdutores from '../../components/ListaProdutores';
 
 const Home = () => {
   return <ListaProdutores />;
