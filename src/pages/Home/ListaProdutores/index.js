@@ -6,7 +6,7 @@ import Filtro from '../Filtro';
 import Topo from '../Topo';
 import styles from './styles';
 
-const Produtores = () => {
+const ListaProdutores = () => {
   const [lista, setLista] = useState(produtores.lista);
 
   const TopoLista = () => (
@@ -27,4 +27,4 @@ const Produtores = () => {
   );
 };
 
-export default Produtores;
+export default ListaProdutores;
