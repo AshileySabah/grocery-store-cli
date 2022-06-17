@@ -1,6 +1,6 @@
 import React, {useMemo, useReducer} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
-import Estrelas from '../../../components/Estrelas';
+import Estrelas from '../../Estrelas';
 import styles from './styles';
 
 const Produtor = ({nome, imagem, distancia, estrelas}) => {

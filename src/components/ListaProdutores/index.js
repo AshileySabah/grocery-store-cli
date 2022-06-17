@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {FlatList, Text} from 'react-native';
-import produtores from '../../../mocks/produtores';
-import Produtor from '../Produtor';
-import Filtro from '../Filtro';
-import Topo from '../Topo';
+import produtores from '../../mocks/produtores';
+import Produtor from './Produtor';
+import Filtro from './Filtro';
+import Topo from './Topo';
 import styles from './styles';
 
 const ListaProdutores = ({melhoresProdutores = false}) => {
