@@ -37,7 +37,7 @@ const ListaProdutores = ({melhoresProdutores = false}) => {
         <Produtor
           {...item}
           onPress={() => {
-            navigation.navigate('Produtor');
+            navigation.navigate('Produtor', item);
           }}
         />
       )}
