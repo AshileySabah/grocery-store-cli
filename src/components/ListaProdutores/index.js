@@ -5,8 +5,11 @@ import Produtor from './Produtor';
 import Filtro from './Filtro';
 import Topo from './Topo';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 
 const ListaProdutores = ({melhoresProdutores = false}) => {
+  const navigation = useNavigation();
+
   const [lista, setLista] = useState(() => {
     const initialList = produtores.lista;
 
@@ -30,7 +33,14 @@ const ListaProdutores = ({melhoresProdutores = false}) => {
   return (
     <FlatList
       data={lista}
-      renderItem={({item}) => <Produtor {...item} />}
+      renderItem={({item}) => (
+        <Produtor
+          {...item}
+          onPress={() => {
+            navigation.navigate('Produtor');
+          }}
+        />
+      )}
       keyExtractor={({nome}) => nome}
       ListHeaderComponent={TopoLista}
     />
