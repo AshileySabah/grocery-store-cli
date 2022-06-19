@@ -5,10 +5,10 @@ import Home from '../pages/Home';
 
 const Stack = createNativeStackNavigator();
 
-const ProdutorRoutes = () => {
+const ProdutorRoutes = ({componentePrincipal = Home}) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={Home} />
+      <Stack.Screen name="HomeScreen" component={componentePrincipal} />
       <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
   );
