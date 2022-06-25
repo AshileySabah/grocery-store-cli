@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
-import Texto from '../Texto';
+import {useNavigation} from '@react-navigation/core';
+import {View, Image, TouchableOpacity} from 'react-native';
+import Texto from '../../../components/Texto';
 import styles from './styles';
 
 const Cesta = ({detalhes, itens, produtor}) => {
@@ -9,7 +9,7 @@ const Cesta = ({detalhes, itens, produtor}) => {
   const {nome, imagem, descricao, preco} = detalhes;
 
   return (
-    <TouchableOpacity style={styles.cesta} onPress={() => null}>
+    <TouchableOpacity style={styles.cesta} onPress={() => {}}>
       <View style={styles.conteudo}>
         <Image source={imagem} style={styles.imagem} />
 
