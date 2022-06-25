@@ -12,6 +12,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#464646',
   },
+  compra: {
+    backgroundColor: '#eaf5f3',
+    padding: 16,
+    color: '#464646',
+    fontSize: 16,
+    lineHeight: 26,
+  },
 });
 
 export default styles;
