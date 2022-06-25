@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  lista: {
+    backgroundColor: '#ffffff',
+  },
   titulo: {
     fontSize: 20,
     lineHeight: 32,
