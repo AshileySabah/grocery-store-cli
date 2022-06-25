@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export const styles = altura =>
+const stylesFunction = altura =>
   StyleSheet.create({
     topo: {
       width: '100%',
@@ -28,3 +28,5 @@ export const styles = altura =>
       height: 24,
     },
   });
+
+export default stylesFunction;
