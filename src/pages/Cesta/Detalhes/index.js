@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, View, TouchableOpacity} from 'react-native';
 import useTextos from '../../../hooks/useTextos';
-import Texto from '../../../componentes/Texto';
+import Texto from '../../../components/Texto';
 import styles from './styles';
 
 const Detalhes = ({nome, produtor, descricao, preco}) => {

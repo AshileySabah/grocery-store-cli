@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import Texto from '../../../componentes/Texto';
+import Texto from '../../../components/Texto';
 import styles from './styles';
 
 const Item = ({item: {nome, imagem}}) => {

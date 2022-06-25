@@ -1,14 +1,17 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import Texto from '../../componentes/Texto';
-import Topo from '../../componentes/Topo';
+import Texto from '../../components/Texto';
+import Topo from '../../components/Topo';
 import useTextos from '../../hooks/useTextos';
-import Detalhes from './componentes/Detalhes';
-import Item from './componentes/Item';
+import Detalhes from './Detalhes';
+import Item from './Item';
 import styles from './styles';
 
-const Cesta = ({detalhes, itens, produtor}) => {
+const Cesta = () => {
+  const route = useRoute();
   const {topoCesta, tituloItens} = useTextos();
+  const {detalhes, itens, produtor} = route.params;
 
   return (
     <>
