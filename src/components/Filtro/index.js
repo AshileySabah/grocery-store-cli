@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import Button from '../../Button';
+import Button from './Button';
 import styles from './styles';
 
 const Filtro = ({lista, setLista}) => {
