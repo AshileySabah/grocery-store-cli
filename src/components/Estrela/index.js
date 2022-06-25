@@ -1,17 +1,15 @@
 import React from 'react';
 import {TouchableOpacity, Image} from 'react-native';
-
 import estrela from '../../assets/estrela.png';
 import estrelaCinza from '../../assets/estrelaCinza.png';
+import stylesFunction from './styles';
 
-import {styles as stylesFunction} from './styles';
-
-export default function Estrela({
-  onPress,
+const Estrela = ({
+  aoPressionar,
   desabilitada = true,
   preenchida,
   grande = false,
-}) {
+}) => {
   const styles = stylesFunction(grande);
 
   const getImagem = () => {
@@ -22,8 +20,10 @@ export default function Estrela({
   };
 
   return (
-    <TouchableOpacity onPress={onPress} disabled={desabilitada}>
+    <TouchableOpacity onPress={aoPressionar} disabled={desabilitada}>
       <Image source={getImagem()} style={styles.estrela} />
     </TouchableOpacity>
   );
-}
+};
+
+export default Estrela;
