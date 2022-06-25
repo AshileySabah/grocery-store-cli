@@ -3,9 +3,11 @@ import {Image, View, TouchableOpacity} from 'react-native';
 import useTextos from '../../../hooks/useTextos';
 import Texto from '../../../components/Texto';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 
 const Detalhes = ({nome, produtor, descricao, preco}) => {
   const {botaoComprar} = useTextos();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -17,7 +19,13 @@ const Detalhes = ({nome, produtor, descricao, preco}) => {
       <Texto style={styles.descricao}>{descricao}</Texto>
       <Texto style={styles.preco}>{preco}</Texto>
 
-      <TouchableOpacity style={styles.botao} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.botao}
+        onPress={() =>
+          navigation.navigate('HomeScreen', {
+            compra: {nome, timestamp: new Date().valueOf()},
+          })
+        }>
         <Texto style={styles.textoBotao}>{botaoComprar}</Texto>
       </TouchableOpacity>
     </>
