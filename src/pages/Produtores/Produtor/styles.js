@@ -7,11 +7,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     borderRadius: 6,
     flexDirection: 'row',
-
-    // Android
     elevation: 4,
-
-    // iOS
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
