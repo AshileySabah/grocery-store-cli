@@ -3,11 +3,11 @@ import {View} from 'react-native';
 import Estrela from '../Estrela';
 import styles from './styles';
 
-export default function Estrelas({
+const Estrelas = ({
   quantidade: quantidadeAntiga,
   editavel = false,
   grande = false,
-}) {
+}) => {
   const [quantidade, setQuantidade] = useState(quantidadeAntiga);
 
   const RenderEstrelas = () => {
@@ -16,7 +16,7 @@ export default function Estrelas({
       listaEstrelas.push(
         <Estrela
           key={i}
-          onPress={() => setQuantidade(i + 1)}
+          aoPressionar={() => setQuantidade(i + 1)}
           desabilitada={!editavel}
           preenchida={i < quantidade}
           grande={grande}
@@ -28,8 +28,10 @@ export default function Estrelas({
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.estrelas}>
       <RenderEstrelas />
     </View>
   );
-}
+};
+
+export default Estrelas;
