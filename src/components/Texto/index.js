@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import styles from './styles';
 
-export default function Texto({children, style}) {
+const Texto = ({children, style}) => {
   let estilo = styles.texto;
 
   if (style?.fontWeight === 'bold') {
@@ -10,4 +10,6 @@ export default function Texto({children, style}) {
   }
 
   return <Text style={[style, estilo]}>{children}</Text>;
-}
+};
+
+export default Texto;
