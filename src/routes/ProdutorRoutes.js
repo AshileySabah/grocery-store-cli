@@ -1,14 +1,14 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Produtor from '../pages/Produtor';
 import Home from '../pages/Home';
+import Produtor from '../pages/Produtor';
 
 const Stack = createNativeStackNavigator();
 
-const ProdutorRoutes = ({componentePrincipal = Home}) => {
+const ProdutorRoutes = ({ComponentePrincipal = Home}) => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="HomeScreen" component={componentePrincipal} />
+      <Stack.Screen name="HomeScreen" component={ComponentePrincipal} />
       <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
   );
