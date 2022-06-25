@@ -1,4 +1,4 @@
-const topo = {
+const textos = {
   boasVindas: 'Olá Natalia',
   legenda: 'Encontre os produtores mais próximos a você!',
   legendaMelhoresProdutores: 'Veja os produtores com 4+ estrelas!',
@@ -10,4 +10,4 @@ const topo = {
   tituloItens: 'Itens da cesta',
 };
 
-export default topo;
+export default textos;
